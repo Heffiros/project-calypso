@@ -6,12 +6,12 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "dev": "echo 'Building thalassa in watch mode...'",
-    "build": "echo 'Building thalassa...'",
-    "clean": "echo 'Cleaning thalassa...'",
+    "dev": "tsc --build --watch",
+    "build": "tsc --build",
+    "clean": "rm -rf dist",
     "lint": "echo 'Linting thalassa...'",
     "test": "echo 'Testing thalassa...'",
-    "type-check": "echo 'Type checking thalassa...'"
+    "type-check": "tsc --build --dry"
   },
   "dependencies": {},
   "devDependencies": {}

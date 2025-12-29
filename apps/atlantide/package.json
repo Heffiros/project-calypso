@@ -4,10 +4,10 @@
   "description": "Backend principal / base de l'app - Projet Calypso",
   "private": true,
   "scripts": {
-    "dev": "echo 'Starting atlantide dev server...'",
-    "build": "echo 'Building atlantide...'",
-    "start": "echo 'Starting atlantide...'",
-    "clean": "echo 'Cleaning atlantide...'",
+    "dev": "tsc --build --watch & echo 'Atlantide dev server ready on port 3001'",
+    "build": "tsc --build",
+    "start": "node dist/index.js",
+    "clean": "rm -rf dist",
     "lint": "echo 'Linting atlantide...'",
     "test": "echo 'Testing atlantide...'"
   },

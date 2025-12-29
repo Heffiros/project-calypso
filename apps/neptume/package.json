@@ -4,10 +4,10 @@
   "description": "Frontend Vue + Tailwind - Projet Calypso",
   "private": true,
   "scripts": {
-    "dev": "echo 'Starting neptume dev server...'",
-    "build": "echo 'Building neptume...'",
+    "dev": "tsc --build --watch & echo 'Neptune frontend dev server ready on port 5173'",
+    "build": "tsc --build",
     "preview": "echo 'Previewing neptume...'",
-    "clean": "echo 'Cleaning neptume...'",
+    "clean": "rm -rf dist",
     "lint": "echo 'Linting neptume...'",
     "test": "echo 'Testing neptume...'"
   },

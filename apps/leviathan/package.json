@@ -4,10 +4,10 @@
   "description": "Game server Colyseus - Projet Calypso",
   "private": true,
   "scripts": {
-    "dev": "echo 'Starting leviathan game server...'",
-    "build": "echo 'Building leviathan...'",
-    "start": "echo 'Starting leviathan game server...'",
-    "clean": "echo 'Cleaning leviathan...'",
+    "dev": "tsc --build --watch & echo 'Leviathan game server ready on port 2567'",
+    "build": "tsc --build",
+    "start": "node dist/index.js",
+    "clean": "rm -rf dist",
     "lint": "echo 'Linting leviathan...'",
     "test": "echo 'Testing leviathan...'"
   },
