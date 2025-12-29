@@ -3,7 +3,7 @@
   "references": [
     { "path": "./packages/thalassa" },
     { "path": "./apps/atlantide" },
-    { "path": "./apps/neptume" },
+    { "path": "./apps/neptune" },
     { "path": "./apps/leviathan" }
   ]
 }
