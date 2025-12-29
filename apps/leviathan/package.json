@@ -1,0 +1,16 @@
+{
+  "name": "@calypso/leviathan",
+  "version": "1.0.0",
+  "description": "Game server Colyseus - Projet Calypso",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'Starting leviathan game server...'",
+    "build": "echo 'Building leviathan...'",
+    "start": "echo 'Starting leviathan game server...'",
+    "clean": "echo 'Cleaning leviathan...'",
+    "lint": "echo 'Linting leviathan...'",
+    "test": "echo 'Testing leviathan...'"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

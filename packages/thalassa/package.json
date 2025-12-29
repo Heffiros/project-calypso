@@ -1,0 +1,18 @@
+{
+  "name": "@calypso/thalassa",
+  "version": "1.0.0",
+  "description": "Types et utilitaires partagés - Projet Calypso",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "dev": "echo 'Building thalassa in watch mode...'",
+    "build": "echo 'Building thalassa...'",
+    "clean": "echo 'Cleaning thalassa...'",
+    "lint": "echo 'Linting thalassa...'",
+    "test": "echo 'Testing thalassa...'",
+    "type-check": "echo 'Type checking thalassa...'"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

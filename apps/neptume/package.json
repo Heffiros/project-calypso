@@ -1,0 +1,16 @@
+{
+  "name": "@calypso/neptume",
+  "version": "1.0.0",
+  "description": "Frontend Vue + Tailwind - Projet Calypso",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'Starting neptume dev server...'",
+    "build": "echo 'Building neptume...'",
+    "preview": "echo 'Previewing neptume...'",
+    "clean": "echo 'Cleaning neptume...'",
+    "lint": "echo 'Linting neptume...'",
+    "test": "echo 'Testing neptume...'"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

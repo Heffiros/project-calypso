@@ -1,0 +1,16 @@
+{
+  "name": "@calypso/atlantide",
+  "version": "1.0.0",
+  "description": "Backend principal / base de l'app - Projet Calypso",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'Starting atlantide dev server...'",
+    "build": "echo 'Building atlantide...'",
+    "start": "echo 'Starting atlantide...'",
+    "clean": "echo 'Cleaning atlantide...'",
+    "lint": "echo 'Linting atlantide...'",
+    "test": "echo 'Testing atlantide...'"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
