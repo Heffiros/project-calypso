@@ -1,0 +1,16 @@
+{
+  "name": "@calypso/atlantide",
+  "version": "1.0.0",
+  "description": "Backend principal / base de l'app - Projet Calypso",
+  "private": true,
+  "scripts": {
+    "dev": "tsc --build --watch & echo 'Atlantide dev server ready on port 3001'",
+    "build": "tsc --build",
+    "start": "node dist/index.js",
+    "clean": "rm -rf dist",
+    "lint": "echo 'Linting atlantide...'",
+    "test": "echo 'Testing atlantide...'"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
