@@ -1,20 +1,17 @@
-import { Player, greetPlayer } from '../../../packages/thalassa/src/index'
+/**
+ * IMPORTANT:
+ * ---------
+ * Do not manually edit this file if you'd like to host your server on Colyseus Cloud
+ *
+ * If you're self-hosting (without Colyseus Cloud), you can manually
+ * instantiate a Colyseus Server as documented here:
+ *
+ * See: https://docs.colyseus.io/server/api/#constructor-options
+ */
+import { listen } from "@colyseus/tools";
 
-// Game Server Leviathan - Colyseus
-console.log('🐉 Leviathan Game Server starting...')
+// Import Colyseus config
+import app from "./app.config";
 
-const gamePlayer: Player = {
-  id: 'leviathan-001',
-  username: 'Game Master',
-  score: 0
-}
-
-greetPlayer(gamePlayer)
-
-console.log('⚡ Leviathan Game Server ready on port 2567')
-
-// Placeholder pour Colyseus
-export default {
-  port: 2567,
-  name: 'Leviathan Game Server'
-}
+// Create and listen on 2567 (or PORT environment variable.)
+listen(app);

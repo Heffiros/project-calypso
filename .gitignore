@@ -157,3 +157,7 @@ prisma/migrations/**/migration.sql
 
 # Local development
 .local
+
+# Bash crash dumps
+*.stackdump
+*.md
