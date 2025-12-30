@@ -28,6 +28,7 @@ import { useTheme } from '~/composables/useTheme'
 const { isDark } = useTheme()
 
 definePageMeta({
-  title: 'Accueil'
+  title: 'Accueil',
+  middleware: ['auth']
 })
 </script>
