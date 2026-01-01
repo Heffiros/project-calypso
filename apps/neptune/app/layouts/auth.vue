@@ -8,10 +8,8 @@
     </div>
 
     <!-- Toggle dark mode en bas à droite -->
-    <button
-      @click="toggleTheme"
-      class="fixed bottom-6 right-6 p-4 bg-white dark:bg-slate-800 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 border border-slate-200 dark:border-slate-700"
-    >
+    <button @click="toggleTheme"
+      class="fixed bottom-6 right-6 p-4 bg-white dark:bg-slate-800 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 border border-slate-200 dark:border-slate-700">
       <Sun v-if="isDark" class="w-5 h-5 text-slate-700 dark:text-slate-300" />
       <Moon v-else class="w-5 h-5 text-slate-700 dark:text-slate-300" />
     </button>

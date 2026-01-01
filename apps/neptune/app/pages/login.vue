@@ -17,39 +17,27 @@
         <label for="email" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">
           Email
         </label>
-        <input
-          id="email"
-          v-model="credentials.email"
-          type="email"
-          required
+        <input id="email" v-model="credentials.email" type="email" required
           class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-          placeholder="votre@email.com"
-        />
+          placeholder="votre@email.com" />
       </div>
 
       <div>
         <label for="password" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">
           Mot de passe
         </label>
-        <input
-          id="password"
-          v-model="credentials.password"
-          type="password"
-          required
+        <input id="password" v-model="credentials.password" type="password" required
           class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-          placeholder="••••••••"
-        />
+          placeholder="••••••••" />
       </div>
 
-      <div v-if="error" class="text-sm text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-900/20 px-4 py-3 rounded-lg">
+      <div v-if="error"
+        class="text-sm text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-900/20 px-4 py-3 rounded-lg">
         {{ error }}
       </div>
 
-      <button
-        type="submit"
-        :disabled="loading"
-        class="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 disabled:bg-slate-400 text-white font-medium rounded-lg transition-colors"
-      >
+      <button type="submit" :disabled="loading"
+        class="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 disabled:bg-slate-400 text-white font-medium rounded-lg transition-colors">
         {{ loading ? 'Connexion...' : 'Se connecter' }}
       </button>
     </form>

@@ -5,10 +5,9 @@ export default defineNuxtPlugin(async () => {
   const config = useRuntimeConfig()
 
   auth.init()
-  
-  // Auto-login désactivé
-  // if (!auth.token && config.public.environment === 'development') {
-  //   console.log('🔑 Performing auto-login for development environment')
-  //   await auth.autoLogin()
-  // }
+
+  if (!auth.token && config.public.environment === 'development') {
+    console.log('🔑 Performing auto-login for development environment')
+    await auth.autoLogin()
+  }
 })
