@@ -32,7 +32,6 @@ export const useAuthStore = defineStore('auth', {
     async autoLogin() {
       if (this.token) return
       const config = useRuntimeConfig()
-      console.log('Auto login with email:', config.public.autoLoginEmail)
       try {
         const response = await $fetch<LoginResponse>('/auth/login', {
           method: 'POST',

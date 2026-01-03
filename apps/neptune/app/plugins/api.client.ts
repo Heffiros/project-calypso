@@ -9,13 +9,10 @@ export default defineNuxtPlugin((nuxtApp) => {
       if (token) {
         options.headers = {
           ...options.headers,
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${token}`
         }
       }
-    },
-    onResponseError({ response }) {
-      console.error('Erreur API', response.status, response._data)
-    },
+    }
   })
   nuxtApp.provide('api', apiFetch)
 })

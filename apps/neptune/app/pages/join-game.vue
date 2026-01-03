@@ -81,6 +81,7 @@
 import { ref } from 'vue'
 import { Gamepad2, CheckCircle, Play } from 'lucide-vue-next'
 import { Client } from "colyseus.js"
+import { useGameStore } from '~/stores/game'
 
 definePageMeta({
   title: 'Rejoindre une partie',
@@ -105,6 +106,8 @@ const statusMessage = computed(() => {
 
 const roomIsReady = ref(false)
 
+const game = useGameStore()
+const router = useRouter()
 // Simuler la recherche de partie
 const searchGame = async () => {
   gameState.value = 'searching'
@@ -115,11 +118,11 @@ const searchGame = async () => {
     token: localStorage.getItem('token')
   })
 
+  game.setRoom(roomToJoin)
+
   roomToJoin.onStateChange((state) => {
-    console.log("Nouveau state reçu :", state)
     if (state.isFull) {
-      roomIsReady.value = true
-      alert("Un adversaire a rejoint la partie ! Vous pouvez maintenant démarrer la partie.")
+      router.push('/game')
     }
   })
 
@@ -128,7 +131,6 @@ const searchGame = async () => {
 
 // Lancer la partie
 const startGame = async () => {
-  console.log("Démarrage de la partie dans la salle ...")
 }
 
 

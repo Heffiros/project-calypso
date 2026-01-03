@@ -7,7 +7,6 @@ export default defineNuxtPlugin(async () => {
   auth.init()
 
   if (!auth.token && config.public.environment === 'development') {
-    console.log('🔑 Performing auto-login for development environment')
     await auth.autoLogin()
   }
 })

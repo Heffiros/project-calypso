@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   css: ["~/assets/css/main.css"],
   devServer: {
     https: false,
-    port: 5000,
+    port: 5000
   },
   runtimeConfig: {
     public: {
@@ -13,11 +13,11 @@ export default defineNuxtConfig({
       autoLoginEmail: process.env.NUXT_PUBLIC_AUTOLOGIN_EMAIL,
       autoLoginPassword: process.env.NUXT_PUBLIC_AUTOLOGIN_PASSWORD,
       environment: process.env.ENVIRONMENT || 'development'
-    },
+    }
   },
   modules: [
     "nuxt-lucide-icons",
     '@pinia/nuxt',
     '@nuxtjs/tailwindcss'
   ]
-});
+})
