@@ -50,7 +50,8 @@
               </div>
 
               <button @click="startGame"
-                class="px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold text-lg rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105">
+                class="px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold text-lg rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
+                :disabled="!roomIsReady">
                 <div class="flex items-center gap-3">
                   <Play class="w-6 h-6" />
                   <span>Lancer la partie</span>
@@ -89,7 +90,6 @@ definePageMeta({
 type GameState = 'idle' | 'searching' | 'ready'
 
 const gameState = ref<GameState>('idle')
-const room = ref<any>(null)
 const statusMessage = computed(() => {
   switch (gameState.value) {
     case 'idle':
@@ -103,28 +103,32 @@ const statusMessage = computed(() => {
   }
 })
 
+const roomIsReady = ref(false)
+
 // Simuler la recherche de partie
 const searchGame = async () => {
   gameState.value = 'searching'
 
-  // Simuler 5 secondes de recherche
-  await new Promise(resolve => setTimeout(resolve, 5000))
-
-  gameState.value = 'ready'
-}
-
-// Lancer la partie
-const startGame = async () => {
   const client = new Client("ws://localhost:2567")
 
   const roomToJoin = await client.joinOrCreate("my_room", {
     token: localStorage.getItem('token')
   })
 
-  room.value = roomToJoin
-  /*room.onStateChange((state) => {
-    console.log("Players:", state.playerCount)
-  })*/
+  roomToJoin.onStateChange((state) => {
+    console.log("Nouveau state reçu :", state)
+    if (state.isFull) {
+      roomIsReady.value = true
+      alert("Un adversaire a rejoint la partie ! Vous pouvez maintenant démarrer la partie.")
+    }
+  })
+
+  gameState.value = 'ready'
+}
+
+// Lancer la partie
+const startGame = async () => {
+  console.log("Démarrage de la partie dans la salle ...")
 }
 
 
@@ -132,4 +136,5 @@ const startGame = async () => {
 const cancelGame = () => {
   gameState.value = 'idle'
 }
+
 </script>

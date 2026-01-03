@@ -2,29 +2,29 @@ import { Room, Client } from "@colyseus/core";
 import { MyRoomState } from "./schema/MyRoomState";
 
 export class MyRoom extends Room<MyRoomState> {
-  maxClients = 4;
   state = new MyRoomState();
 
   onCreate(options: any) {
-    this.onMessage("type", (client, message) => {
-      //
-      // handle "type" message
-      //
-    });
+    console.log("MyRoom created!", options)
+    console.log("Initial player count:", this.state.playerCount)
   }
 
-  onJoin(client: Client, options: any) {
-    console.log("options:", options)
+  onJoin() {
+    console.log("A player joined the room.")
     this.state.playerCount++
-    console.log(client.sessionId, "joined!");
+
+    if (this.state.playerCount >= this.state.maxPlayers) {
+      this.state.isFull = true
+    }
   }
 
   onLeave(client: Client, consented: boolean) {
-    console.log(client.sessionId, "left!");
+    this.state.playerCount--
+    this.state.isFull = false
   }
 
   onDispose() {
-    console.log("room", this.roomId, "disposing...");
+    console.log("room", this.roomId, "disposing...")
   }
 
 }
