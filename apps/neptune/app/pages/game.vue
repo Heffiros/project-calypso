@@ -1,6 +1,6 @@
 <template>
   <div class="h-screen flex flex-col items-center justify-center">
-    <div>
+    <div class="mb-8">
       <h1 class="text-2xl font-bold">
         🎮 Partie en cours
       </h1>
