@@ -1,8 +1,13 @@
 <template>
-  <div class="h-screen flex items-center justify-center">
-    <h1 class="text-2xl font-bold">
-      🎮 Partie en cours
-    </h1>
+  <div class="h-screen flex flex-col items-center justify-center">
+    <div>
+      <h1 class="text-2xl font-bold">
+        🎮 Partie en cours
+      </h1>
+    </div>
+    <div>
+      <GamePixiGame />
+    </div>
   </div>
 </template>
 
