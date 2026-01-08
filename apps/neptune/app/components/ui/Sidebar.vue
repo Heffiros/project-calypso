@@ -54,12 +54,12 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { useAuthStore } from '~/stores/auth'
-import { Home, User, Library, ShieldHalf, FileSliders, Gamepad2 } from 'lucide-vue-next'
+import { Home, User, Star, ShieldHalf, ChartBarIncreasing, Gamepad2, History } from 'lucide-vue-next'
 
 const route = useRoute()
 
 const title = ref('Bataille Navale')
-const icons = { Home, User, Library, ShieldHalf, FileSliders, Gamepad2 }
+const icons = { Home, User, Star, ShieldHalf, ChartBarIncreasing, Gamepad2, History }
 type IconName = keyof typeof icons
 
 const props = defineProps({
@@ -81,23 +81,30 @@ const items = ref<MenuItem[]>([
   },
   { title: 'DIVIDER', type: 'divider' },
   {
-    title: 'ECRITURE',
+    title: 'Jeux',
     type: 'menu'
   },
   {
-    icon: 'Library',
-    title: 'Ma bibliothèque',
+    icon: 'ChartBarIncreasing',
+    title: 'Leaderboard',
     hasToBeAuth: true,
     hasToBeAdmin: false,
-    to: '/library',
+    to: '/leaderboard',
     type: 'link'
   },
   {
-    icon: 'FileSliders',
-    title: 'Mes brouillons',
+    icon: 'Star',
+    title: 'Statistiques',
     hasToBeAuth: true,
     hasToBeAdmin: false,
-    to: '/library?mode=draft',
+    to: '/stats',
+    type: 'link'
+  }, {
+    icon: 'History',
+    title: 'Historique',
+    hasToBeAuth: true,
+    hasToBeAdmin: false,
+    to: '/history',
     type: 'link'
   },
   {
